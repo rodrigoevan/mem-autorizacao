@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Autorização · Prontidão Agêntica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fundo: #F6F4F0; --tinta: #0A0A0A; --texto: #2B2A28; --suave: #6F6D68;
+    --linha: #DEDAD2; --azul: #2346D5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--fundo); }
+  body {
+    font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+    color: var(--texto); font-size: 16px; line-height: 1.5;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  .wrap { width: 100%; max-width: 560px; margin: 0 auto; padding: 28px 20px 24px; flex: 1; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: center;
+           padding-bottom: 16px; border-bottom: 1px solid var(--tinta); margin-bottom: 40px; }
+  .logo { height: 22px; width: auto; color: var(--tinta); display: block; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 11px; letter-spacing: .08em;
+          text-transform: uppercase; color: var(--suave); }
+  h1 { font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.12; color: var(--tinta); margin: 12px 0 14px; }
+  p { color: var(--texto); }
+  .sub { color: var(--suave); }
+  .estado { display: none; }
+  .estado.ativo { display: block; }
+  .marca { display: inline-flex; align-items: center; gap: 8px; }
+  .marca i { width: 10px; height: 10px; background: var(--azul); display: inline-block; }
+  .marca.erro i { background: var(--tinta); }
+
+  .acao { margin: 32px 0 12px; }
+  .botao {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; min-height: 54px; padding: 0 20px;
+    background: var(--tinta); color: var(--fundo); text-decoration: none;
+    font-family: inherit; font-size: 16px; font-weight: 500; border: 0; cursor: pointer;
+  }
+  .botao:active { opacity: .85; }
+  .codigo {
+    margin-top: 12px; display: grid; grid-template-columns: 1fr auto; align-items: center;
+    border: 1px solid var(--linha); background: #FBFAF7;
+  }
+  .codigo code { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 13px; color: var(--tinta);
+                 padding: 12px 14px; overflow-wrap: anywhere; }
+  .copiar { height: 100%; padding: 0 16px; border: 0; border-left: 1px solid var(--linha); background: transparent;
+            font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+            color: var(--tinta); cursor: pointer; }
+  .aviso { font-size: 14px; color: var(--suave); margin-top: 10px; }
+
+  dl { margin-top: 40px; border-top: 1px solid var(--linha); }
+  dl div { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--linha); font-size: 14px; }
+  dt { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); padding-top: 2px; }
+  dd { color: var(--texto); }
+
+  footer { margin-top: auto; padding-top: 40px; }
+  footer .linha { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--linha); padding-top: 14px; }
+  footer .logo { height: 10px; }
+  @media (max-width: 380px) { h1 { font-size: 26px; } dl div { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="logo" role="img" aria-label="mem" xmlns="http://www.w3.org/2000/svg" viewBox="34 38 2252 568" fill="currentColor" fill-rule="evenodd"><path d="M1128.5 599.0C1113.3 597.3 1082.6 589.8 1068.5 584.5C1064.7 583.0 1059.0 581.0 1055.9 579.9C1039.8 574.2 1009.4 556.9 989.5 542.0C942.0 506.4 902.2 444.5 890.0 387.0C888.7 381.2 887.1 374.0 886.3 371.0C885.6 368.0 884.5 358.5 884.0 350.0C880.1 283.3 873.6 261.1 849.6 232.5C820.0 197.0 784.0 179.9 739.0 179.8C720.8 179.8 689.0 185.9 680.5 191.0C678.9 191.9 675.5 193.9 673.0 195.2C658.5 203.2 657.9 203.6 646.6 213.3C627.7 229.6 609.0 256.5 603.8 275.0C595.7 303.9 596.0 297.7 596.0 443.6C596.0 529.6 595.7 571.8 595.0 573.1C593.7 575.5 464.6 576.2 462.2 573.8C461.3 572.9 461.0 543.6 461.0 448.0C461.0 289.3 460.8 287.5 445.0 256.8C413.3 195.4 346.4 167.2 276.4 185.5C235.8 196.2 194.9 235.5 182.7 275.6C174.9 300.8 175.0 299.7 175.0 446.5C175.0 559.1 174.8 572.0 173.4 573.4C171.2 575.7 42.9 575.8 41.1 573.6C38.9 571.0 40.1 296.4 42.4 282.0C55.6 197.2 102.6 127.0 176.0 82.5C235.6 46.4 306.7 35.3 380.5 50.7C393.1 53.3 403.2 56.1 409.0 58.4C410.9 59.2 415.6 61.1 419.5 62.6C451.6 74.9 487.5 98.7 514.5 125.5C522.0 132.9 528.6 139.0 529.1 139.0C529.7 139.0 537.0 132.1 545.3 123.6C583.8 84.6 630.0 59.7 683.5 49.2C710.5 43.8 754.4 42.5 778.0 46.4C800.2 49.9 820.7 54.7 830.0 58.4C831.9 59.2 836.2 60.8 839.5 62.1C871.6 74.1 909.0 99.0 934.3 124.9C941.8 132.7 948.4 139.0 949.1 139.0C949.7 139.0 956.6 132.8 964.4 125.2C989.6 100.7 1009.3 86.7 1040.5 71.2C1061.8 60.5 1064.3 59.7 1093.0 52.7C1120.2 46.0 1128.7 44.8 1152.5 44.3C1174.6 43.8 1203.5 46.1 1216.0 49.5C1219.0 50.3 1224.2 51.5 1227.5 52.1C1233.1 53.1 1241.7 55.7 1247.2 57.9C1248.4 58.5 1252.7 60.1 1256.5 61.6C1263.2 64.2 1266.4 65.6 1288.7 76.1C1310.6 86.4 1333.3 102.7 1356.1 124.8C1363.6 132.1 1370.2 138.0 1370.8 138.0C1371.3 138.0 1374.8 134.8 1378.6 130.9C1403.1 105.5 1444.5 77.6 1476.5 64.7C1495.9 57.0 1499.0 55.9 1515.0 52.2C1558.6 41.8 1597.0 41.5 1641.0 50.9C1694.2 62.4 1733.6 83.5 1773.2 121.9C1782.3 130.8 1790.5 138.0 1791.4 138.0C1792.2 138.0 1798.7 132.3 1805.7 125.2C1832.2 98.8 1869.5 74.2 1901.5 62.1C1904.8 60.8 1909.5 59.0 1912.0 58.0C1921.0 54.4 1939.7 50.2 1963.5 46.3C1988.6 42.2 2033.3 44.0 2057.0 50.0C2061.1 51.1 2069.0 53.1 2074.5 54.4C2080.0 55.8 2090.3 59.2 2097.5 62.0C2104.7 64.8 2111.6 67.5 2113.0 68.0C2143.4 77.9 2192.3 114.8 2218.8 147.8C2252.5 189.9 2269.4 228.7 2277.7 283.0C2279.9 297.6 2281.1 571.0 2278.9 573.6C2277.1 575.8 2148.8 575.7 2146.6 573.4C2145.2 572.0 2145.0 559.2 2145.0 447.0C2145.0 300.2 2145.1 303.2 2136.7 273.4C2131.3 254.2 2108.6 223.8 2087.5 207.4C2045.8 175.1 1979.8 170.4 1933.8 196.6C1896.7 217.6 1872.4 249.9 1862.6 291.0C1859.4 304.4 1859.0 323.6 1859.0 448.5C1859.0 543.7 1858.7 572.9 1857.8 573.8C1856.0 575.6 1726.5 575.5 1725.3 573.8C1724.9 573.1 1724.3 511.8 1723.9 437.5C1723.4 303.2 1723.4 302.5 1721.2 293.2C1712.4 255.3 1692.0 225.1 1660.7 203.2C1625.4 178.5 1576.1 172.4 1533.6 187.6C1498.2 200.1 1464.1 230.4 1452.5 259.5C1451.6 261.7 1450.5 264.4 1450.0 265.5C1449.5 266.6 1447.0 272.9 1444.4 279.5C1441.9 286.1 1438.7 294.4 1437.3 298.0C1423.3 333.8 1384.0 369.7 1346.5 380.8C1318.5 389.1 1333.5 388.4 1179.5 388.7C1103.0 388.9 1039.5 389.2 1038.2 389.5C1033.5 390.6 1036.3 396.6 1049.5 412.9C1065.8 433.2 1090.5 450.3 1113.5 457.4C1118.5 458.9 1124.3 460.8 1126.5 461.6C1133.9 464.5 1156.9 466.1 1171.5 464.9C1199.4 462.5 1230.2 449.4 1252.4 430.6C1256.4 427.2 1260.0 425.0 1261.4 425.0C1264.0 425.0 1354.1 515.3 1354.8 518.6C1356.5 526.3 1294.5 568.6 1266.3 579.0C1262.0 580.6 1255.6 583.0 1252.0 584.5C1223.0 596.1 1163.8 603.1 1128.5 599.0Z M1282.9 253.6C1287.0 248.7 1259.2 216.6 1239.7 203.7C1208.0 182.6 1163.0 173.9 1129.2 182.4C1125.8 183.3 1120.2 184.7 1116.8 185.6C1107.7 187.8 1093.6 194.9 1080.2 203.9C1059.0 218.1 1031.9 249.5 1036.7 254.3C1038.1 255.8 1281.7 255.1 1282.9 253.6Z"/></svg>
+    <span class="mono">Prontidão Agêntica</span>
+  </header>
+
+  <main>
+    <section class="estado" id="ok">
+      <span class="mono marca"><i></i>Autorização recebida</span>
+      <h1>Falta um toque: envie o código.</h1>
+      <p class="sub">O código vale poucos minutos. Envie agora para concluirmos a ligação com a sua loja.</p>
+      <div class="acao">
+        <a class="botao" id="whats" href="#" rel="noopener">Enviar pelo WhatsApp</a>
+        <div class="codigo"><code id="cod"></code><button class="copiar" id="copiar" type="button">Copiar</button></div>
+        <p class="aviso">Sozinho, este código não dá acesso à sua conta. Ele só funciona junto com a chave do aplicativo, que nunca sai do nosso computador.</p>
+      </div>
+    </section>
+
+    <section class="estado" id="negado">
+      <span class="mono marca erro"><i></i>Autorização não concluída</span>
+      <h1>Nada foi compartilhado.</h1>
+      <p class="sub">A autorização foi cancelada ou não terminou. Se quiser participar, abra de novo o link que você recebeu e clique em Permitir.</p>
+    </section>
+
+    <section class="estado" id="neutro">
+      <span class="mono marca"><i></i>Piloto Prontidão Agêntica</span>
+      <h1>Página de retorno da autorização.</h1>
+      <p class="sub">Você chega aqui depois de autorizar o aplicativo Prontidão Agêntica no Mercado Livre. Se abriu esta página sem esse passo, use o link que você recebeu.</p>
+    </section>
+
+    <dl>
+      <div><dt>Acesso</dt><dd>Somente leitura dos seus anúncios ativos, visitas e vendas dos últimos 90 dias.</dd></div>
+      <div><dt>Não fazemos</dt><dd>Alterar anúncios, enviar mensagens ou guardar dados de compradores.</dd></div>
+      <div><dt>Cancelar</dt><dd>A qualquer momento, nas configurações de segurança da sua conta do Mercado Livre, em aplicativos conectados.</dd></div>
+    </dl>
+  </main>
+
+  <footer><div class="linha"><svg class="logo" role="img" aria-label="mem" xmlns="http://www.w3.org/2000/svg" viewBox="34 38 2252 568" fill="currentColor" fill-rule="evenodd"><path d="M1128.5 599.0C1113.3 597.3 1082.6 589.8 1068.5 584.5C1064.7 583.0 1059.0 581.0 1055.9 579.9C1039.8 574.2 1009.4 556.9 989.5 542.0C942.0 506.4 902.2 444.5 890.0 387.0C888.7 381.2 887.1 374.0 886.3 371.0C885.6 368.0 884.5 358.5 884.0 350.0C880.1 283.3 873.6 261.1 849.6 232.5C820.0 197.0 784.0 179.9 739.0 179.8C720.8 179.8 689.0 185.9 680.5 191.0C678.9 191.9 675.5 193.9 673.0 195.2C658.5 203.2 657.9 203.6 646.6 213.3C627.7 229.6 609.0 256.5 603.8 275.0C595.7 303.9 596.0 297.7 596.0 443.6C596.0 529.6 595.7 571.8 595.0 573.1C593.7 575.5 464.6 576.2 462.2 573.8C461.3 572.9 461.0 543.6 461.0 448.0C461.0 289.3 460.8 287.5 445.0 256.8C413.3 195.4 346.4 167.2 276.4 185.5C235.8 196.2 194.9 235.5 182.7 275.6C174.9 300.8 175.0 299.7 175.0 446.5C175.0 559.1 174.8 572.0 173.4 573.4C171.2 575.7 42.9 575.8 41.1 573.6C38.9 571.0 40.1 296.4 42.4 282.0C55.6 197.2 102.6 127.0 176.0 82.5C235.6 46.4 306.7 35.3 380.5 50.7C393.1 53.3 403.2 56.1 409.0 58.4C410.9 59.2 415.6 61.1 419.5 62.6C451.6 74.9 487.5 98.7 514.5 125.5C522.0 132.9 528.6 139.0 529.1 139.0C529.7 139.0 537.0 132.1 545.3 123.6C583.8 84.6 630.0 59.7 683.5 49.2C710.5 43.8 754.4 42.5 778.0 46.4C800.2 49.9 820.7 54.7 830.0 58.4C831.9 59.2 836.2 60.8 839.5 62.1C871.6 74.1 909.0 99.0 934.3 124.9C941.8 132.7 948.4 139.0 949.1 139.0C949.7 139.0 956.6 132.8 964.4 125.2C989.6 100.7 1009.3 86.7 1040.5 71.2C1061.8 60.5 1064.3 59.7 1093.0 52.7C1120.2 46.0 1128.7 44.8 1152.5 44.3C1174.6 43.8 1203.5 46.1 1216.0 49.5C1219.0 50.3 1224.2 51.5 1227.5 52.1C1233.1 53.1 1241.7 55.7 1247.2 57.9C1248.4 58.5 1252.7 60.1 1256.5 61.6C1263.2 64.2 1266.4 65.6 1288.7 76.1C1310.6 86.4 1333.3 102.7 1356.1 124.8C1363.6 132.1 1370.2 138.0 1370.8 138.0C1371.3 138.0 1374.8 134.8 1378.6 130.9C1403.1 105.5 1444.5 77.6 1476.5 64.7C1495.9 57.0 1499.0 55.9 1515.0 52.2C1558.6 41.8 1597.0 41.5 1641.0 50.9C1694.2 62.4 1733.6 83.5 1773.2 121.9C1782.3 130.8 1790.5 138.0 1791.4 138.0C1792.2 138.0 1798.7 132.3 1805.7 125.2C1832.2 98.8 1869.5 74.2 1901.5 62.1C1904.8 60.8 1909.5 59.0 1912.0 58.0C1921.0 54.4 1939.7 50.2 1963.5 46.3C1988.6 42.2 2033.3 44.0 2057.0 50.0C2061.1 51.1 2069.0 53.1 2074.5 54.4C2080.0 55.8 2090.3 59.2 2097.5 62.0C2104.7 64.8 2111.6 67.5 2113.0 68.0C2143.4 77.9 2192.3 114.8 2218.8 147.8C2252.5 189.9 2269.4 228.7 2277.7 283.0C2279.9 297.6 2281.1 571.0 2278.9 573.6C2277.1 575.8 2148.8 575.7 2146.6 573.4C2145.2 572.0 2145.0 559.2 2145.0 447.0C2145.0 300.2 2145.1 303.2 2136.7 273.4C2131.3 254.2 2108.6 223.8 2087.5 207.4C2045.8 175.1 1979.8 170.4 1933.8 196.6C1896.7 217.6 1872.4 249.9 1862.6 291.0C1859.4 304.4 1859.0 323.6 1859.0 448.5C1859.0 543.7 1858.7 572.9 1857.8 573.8C1856.0 575.6 1726.5 575.5 1725.3 573.8C1724.9 573.1 1724.3 511.8 1723.9 437.5C1723.4 303.2 1723.4 302.5 1721.2 293.2C1712.4 255.3 1692.0 225.1 1660.7 203.2C1625.4 178.5 1576.1 172.4 1533.6 187.6C1498.2 200.1 1464.1 230.4 1452.5 259.5C1451.6 261.7 1450.5 264.4 1450.0 265.5C1449.5 266.6 1447.0 272.9 1444.4 279.5C1441.9 286.1 1438.7 294.4 1437.3 298.0C1423.3 333.8 1384.0 369.7 1346.5 380.8C1318.5 389.1 1333.5 388.4 1179.5 388.7C1103.0 388.9 1039.5 389.2 1038.2 389.5C1033.5 390.6 1036.3 396.6 1049.5 412.9C1065.8 433.2 1090.5 450.3 1113.5 457.4C1118.5 458.9 1124.3 460.8 1126.5 461.6C1133.9 464.5 1156.9 466.1 1171.5 464.9C1199.4 462.5 1230.2 449.4 1252.4 430.6C1256.4 427.2 1260.0 425.0 1261.4 425.0C1264.0 425.0 1354.1 515.3 1354.8 518.6C1356.5 526.3 1294.5 568.6 1266.3 579.0C1262.0 580.6 1255.6 583.0 1252.0 584.5C1223.0 596.1 1163.8 603.1 1128.5 599.0Z M1282.9 253.6C1287.0 248.7 1259.2 216.6 1239.7 203.7C1208.0 182.6 1163.0 173.9 1129.2 182.4C1125.8 183.3 1120.2 184.7 1116.8 185.6C1107.7 187.8 1093.6 194.9 1080.2 203.9C1059.0 218.1 1031.9 249.5 1036.7 254.3C1038.1 255.8 1281.7 255.1 1282.9 253.6Z"/></svg><span class="mono">Inteligência Aplicada</span></div></footer>
+</div>
+
+<script>
+  (function () {
+    var WHATSAPP = "5531997644821";
+    var q = new URLSearchParams(location.search);
+    var code = q.get("code");
+    var loja = (q.get("state") || "").replace(/[^a-z0-9_-]/gi, "").slice(0, 40);
+    var estado = code ? "ok" : (q.get("error") ? "negado" : "neutro");
+    document.getElementById(estado).classList.add("ativo");
+    if (location.search) history.replaceState(null, "", location.pathname); // tira o código da barra de endereço
+    if (!code) return;
+
+    document.getElementById("cod").textContent = code;
+    var msg = "Autorização Prontidão Agêntica" + (loja ? "\nLoja: " + loja : "") + "\nCódigo: " + code;
+    document.getElementById("whats").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+
+    var botao = document.getElementById("copiar");
+    botao.addEventListener("click", function () {
+      var ok = function () { botao.textContent = "Copiado"; setTimeout(function () { botao.textContent = "Copiar"; }, 2000); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(ok, function () {});
+      } else {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById("cod"));
+        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand("copy"); ok(); } catch (e) {}
+      }
+    });
+  })();
+</script>
+</body>
+</html>
